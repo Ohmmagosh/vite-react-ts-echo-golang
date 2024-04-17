@@ -1,0 +1,25 @@
+services:
+  front-end:
+    image: node:front-end
+    restart: always
+    ports:
+      - "8080:8080"
+    container_name: front-end
+    build: ./front-end/
+    networks:
+      - backend
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+  back-end:
+    image:  go:back-end
+    restart: always
+    networks:
+      - backend
+    ports:
+      - "8000:8000"
+    container_name: back-end
+    build:
+      context: ./back-end/
+
+networks:
+  backend:
