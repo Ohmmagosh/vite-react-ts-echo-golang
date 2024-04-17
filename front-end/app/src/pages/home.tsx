@@ -16,7 +16,7 @@ export default function Home() {
       }
     }
     validateUser()
-  }, [])
+  }, [user, navigate])
   return (
     <HomeLayout>
       {user?.role === "admin" ? <Admin /> : <Client />}
