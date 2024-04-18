@@ -161,21 +161,3 @@ func ReadCustomerDataCsv(filename string) (bool, []Customer, error) {
 	return true, customers, nil
 }
 
-// func AddUser(c echo.Context) error {
-// 	user := User{}
-
-// 	defer c.Request().Body.Close()
-// 	b, err := io.ReadAll(c.Request().Body)
-
-// 	if err != nil {
-// 		log.Println("Fail to reading the request body: ", err)
-// 		return c.String(http.StatusInternalServerError, "")
-// 	}
-// 	err = json.Unmarshal(b, &user)
-// 	if err != nil {
-// 		log.Println("Failed to unmarshaling in addUser: ", err)
-// 		return c.String(http.StatusInternalServerError, "")
-// 	}
-// 	log.Println("this is your user", user)
-// 	return c.String(http.StatusOK, "we got your name!")
-// }
